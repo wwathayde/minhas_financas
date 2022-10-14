@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="financas" target="17" />
+      <module name="financas" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

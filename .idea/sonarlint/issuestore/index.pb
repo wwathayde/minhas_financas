@@ -7,8 +7,6 @@ b
 2src/main/java/com/wsys/financas/model/Usuario.java,b/7/b79a5b84125e85ccb5821237fef18a62a02c887e
 q
 Asrc/main/java/com/wsys/financas/repository/UsuarioRepository.java,8/5/85f99acf9778d7b173803823c423fc6bf1e832f7
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 j
 :src/main/java/com/wsys/financas/dto/AtualizaStatusDTO.java,6/5/6508d5392a0e50b3813b824e827393f926191a29
 e
