@@ -12,7 +12,7 @@ public class FinancasApplication implements WebMvcConfigurer {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
+		registry.addMapping("/**");
 	}
 
 	public static void main(String[] args) {
