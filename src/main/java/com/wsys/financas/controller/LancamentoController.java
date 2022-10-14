@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "https://wesley-financas-frontend.herokuapp.com")
+@CrossOrigin
 @RestController
 @RequestMapping("/api/lancamentos")
 @AllArgsConstructor

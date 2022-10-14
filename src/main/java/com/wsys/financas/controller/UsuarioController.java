@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-@CrossOrigin(origins = "https://wesley-financas-frontend.herokuapp.com")
+@CrossOrigin
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/usuarios")
