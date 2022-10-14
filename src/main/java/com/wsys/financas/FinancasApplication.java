@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 //@EnableWebMvc
-public class FinancasApplication implements WebMvcConfigurer {
+public class FinancasApplication {
 
 //	@Override
 //	public void addCorsMappings(CorsRegistry registry) {

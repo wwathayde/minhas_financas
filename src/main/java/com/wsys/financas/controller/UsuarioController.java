@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-@CrossOrigin
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/usuarios")
