@@ -22,4 +22,5 @@ public class LancamentoDTO {
     private BigDecimal valor;
     private String tipo;
     private String status;
+    private String categoria;
 }

@@ -24,27 +24,19 @@ public class LancamentoService {
     @Transactional
     public Lancamento salvar(Lancamento lancamento) {
         validarLancamento(lancamento);
-        lancamento.setStatus(StatusLancamento.PENDENTE);
         return repository.save(lancamento);
     }
 
     @Transactional
     public Lancamento atualizar(Lancamento lancamento) {
-        Objects.requireNonNull(lancamento.getId());
-        validarLancamento(lancamento);
-        return repository.save(lancamento);
+        validaIdLancamento(lancamento);
+        return salvar(lancamento);
     }
 
     @Transactional
     public void deletar(Lancamento lancamento) {
-        Objects.requireNonNull(lancamento.getId());
+        validaIdLancamento(lancamento);
         repository.delete(lancamento);
-    }
-
-    @Transactional
-    public void atualizarStatus(Lancamento lancamento, StatusLancamento status) {
-        lancamento.setStatus(status);
-        atualizar(lancamento);
     }
 
     @Transactional(readOnly = true)
@@ -109,6 +101,12 @@ public class LancamentoService {
 
         if (lancamento.getTipo() == null) {
             throw new RegraNegocioException("Informe um Tipo de Lancamento válido");
+        }
+    }
+
+    private void validaIdLancamento(Lancamento lancamento) {
+        if (lancamento.getId() == null) {
+            throw new RegraNegocioException("Id do lançamento inválido");
         }
     }
 }

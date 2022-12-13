@@ -3,6 +3,7 @@ package com.wsys.financas.model;
 import com.wsys.financas.enums.StatusLancamento;
 import com.wsys.financas.enums.TipoLancamento;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -20,6 +21,7 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "lancamento")
 public class Lancamento {
     @Id
@@ -38,7 +40,7 @@ public class Lancamento {
 
     private BigDecimal valor;
 
-    private LocalDate dataCadastro;
+    private String categoria;
 
     @Enumerated(EnumType.STRING)
     private TipoLancamento tipo;

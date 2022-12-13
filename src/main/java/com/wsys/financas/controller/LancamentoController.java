@@ -129,6 +129,7 @@ public class LancamentoController {
                 .ano(lancamento.getAno())
                 .status(lancamento.getStatus().name())
                 .tipo(lancamento.getTipo().name())
+                .categoria(lancamento.getCategoria())
                 .usuarioId(lancamento.getUsuario().getId())
                 .build();
     }
@@ -140,6 +141,7 @@ public class LancamentoController {
         lancamento.setAno(dto.getAno());
         lancamento.setMes(dto.getMes());
         lancamento.setValor(dto.getValor());
+        lancamento.setCategoria(dto.getCategoria());
 
         Usuario usuario =  usuarioService.obterUsuarioPorId(dto.getUsuarioId())
                 .orElseThrow(() -> new RegraNegocioException("Usuario não encontrado para o Id informado."));
