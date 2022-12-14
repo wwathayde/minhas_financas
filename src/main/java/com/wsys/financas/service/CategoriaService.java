@@ -35,6 +35,7 @@ public class CategoriaService {
 
     @Transactional
     public Categoria atualizar(Categoria categoria) {
+        validarId(categoria);
         validarCategoria(categoria);
         return categoriaRepository.save(categoria);
     }
