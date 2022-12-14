@@ -47,9 +47,6 @@ public class CategoriaService {
 
 //    @Transactional(readOnly = true)
     private void validarCategoria(Categoria categoria) {
-        if (categoria.getId() == null) {
-            throw new RegraNegocioException("Id da categoria inválido");
-        }
         if (StringUtils.isBlank(categoria.getNome())) {
             throw new RegraNegocioException("Informe um Nome válido");
         }
@@ -57,11 +54,15 @@ public class CategoriaService {
 
 //    @Transactional(readOnly = true)
     private void validarDelecaoCategoria(Categoria categoria) {
-        if (categoria.getId() == null) {
-            throw new RegraNegocioException("Id da categoria inválido");
-        }
+        validarId(categoria);
         if (!categoriaRepository.findByPai(categoria.getNome()).isEmpty()) {
             throw new RegraNegocioException("Categoria não pode ser deletada, pois possui uma ou mais sub-categorias dependentes.");
+        }
+    }
+
+    private void validarId(Categoria categoria) {
+        if (categoria.getId() == null) {
+            throw new RegraNegocioException("Id da categoria inválido");
         }
     }
 
